@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+    <title>Todo-App</title>
+    <style>
+        
+        *{
+            box-sizing: border-box;
+            padding: o;
+            margin: 0;
+            font-family: 'Roboto Slab', serif;;
+        }
+
+        body{
+            background-color: #e9d0ed;
+        }
+
+        main{
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .card-panel{
+            transition: .5s ease;
+        }
+        .card-panel:hover{
+            transform: scale(1.025);
+            //transition: .5s ease;
+        }
+
+        .my-note-container{
+            height: 100%;
+            width: 100%;
+        }
+
+        .my-note-body{
+            height: 100%;
+            width: 100%;
+        }
+
+        textarea{
+            background-color: aliceblue;
+            font-size: 1.5rem;
+            padding: 1rem;
+            /* border-width: 1px; */
+            border-style: none;
+            border-color: -internal-light(rgb(255, 255, 255), rgb(224, 253, 226));
+        }
+
+        textarea.text-area-enlarge{
+            min-height: 40vh;
+            border-radius: .5rem;
+        }
+
+        textarea:focus, input:focus{
+		 	   outline: none;
+		}
+
+        .button-row{
+            margin: 1rem;
+        }
+        
+        .pad-1rem{
+            padding-top: 2rem;
+            padding-right: 1rem;
+        }
+
+        textarea.text-area-tit{
+            min-height: 8vh;
+            border-radius: 1rem;
+            padding: 1rem;
+            border-style: none;
+        }
+
+        textarea.text-area-bod{
+            min-height: 40vh;
+            border-radius: 1rem;
+            padding: 1rem;
+            border-style: none;
+        }
+    </style>
+</head>
+<body>
+
+    <main style="background: #e9d0ed;">
+       
+
+        <nav> <div class="nav-wrapper purple">
+            <a href="/" class="brand-logo center">Todo-App</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <!-- <li><a href="/about.html">About</a></li> -->
+            <!-- <li><a href="#" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a></li> -->
+            </ul>
+        </div>
+        </nav>
+
+        {% comment %} 
+        <ul id="slide-out" class="sidenav">
+            <li><div class="user-view">
+            <div class="background">
+                <img src="images/office.jpg">
+            </div>
+            <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+            <a href="#name"><span class="white-text name">John Doe</span></a>
+            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div></li>
+            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!">Second Link</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        {% endcomment %}
+
+        {% block body %}
+        <!-- All the body content goes here -->
+        {% endblock body %}
+
+        {% comment %} {% block js %}
+        <!-- The js codes goes here -->
+        {% endblock js %}
+         {% endcomment %}
+
+    </main>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <script>
+    $(document).ready(function() {
+        $('.sidenav').sidenav();
+    });
+    </script>
+
+</body>
+</html>
+
+    

@@ -1,0 +1,55 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block body %}
+
+<!-- <nav>
+    <div class="nav-wrapper purple">
+        <a href="/" class="brand-logo center">Todo-App</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down"> -->
+        <!-- <li><a href="/about.html">About</a></li> -->
+        <!-- <li><a href="#" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a></li> -->
+        <!-- </ul>
+    </div>
+</nav> -->
+
+<div class="button-row">
+    <a href="/delete/{{note.id}}" class="z-depth-5 waves-effect waves-light btn-small pink lighten-1 right"><i class="material-icons left">content_cut</i>Delete</a>
+</div>
+<div class="container pad-1rem">
+    <div class="my-note-container">
+        <div class="my-note-header">
+        <h3 class="center">{{ note.title }}</h3>
+        <h5 class="center"><span style="font-size: .85rem;">{{note.updated}}</span></h5>
+        </div>
+        <div class="row my-note-body">
+            <form class="col s12" method="post" action="/update/{{note.id}}/">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="{{ note.id }}" class="text-area-enlarge" name="updated">{{ note.body }}</textarea>
+                      <label for="note-area"></label>
+                    </div>
+                  </div>
+                <div class="left">
+                  <button class="btn z-depth-5 waves-effect waves-purple left" tooltip-position="bottom" data-tooltip="">
+                    <i class="material-icons left">check</i> Save</button>
+                </div>
+                </form>
+          </div>
+    </div>
+</div>
+
+  {% comment %} 
+  <!-- Element Showed -->
+  <a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">menu</i></a>
+
+  <!-- Tap Target Structure -->
+  <div class="tap-target" data-target="menu">
+    <div class="tap-target-content">
+      <h5>Title</h5>
+      <p>A bunch of text</p>
+    </div>
+  </div> 
+  {% endcomment %}
+
+{% endblock body %}

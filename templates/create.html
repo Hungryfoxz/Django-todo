@@ -1,0 +1,31 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container">
+<div class="row">
+<form class="col s12" method="post" action="/create/">
+    {% csrf_token %}
+    <div class="row">
+        <div class="input-field col s12">
+            <h5>Title :</h5>
+          <textarea id="tit" class="text-area-tit" name="tit"></textarea>
+          <label for="tit"></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+            <h5>Body :</h5>
+          <textarea id="bod" class="text-area-bod" name="bod"></textarea>
+          <label for="bod"></label>
+        </div>
+      </div>
+    <div class="right">
+      <button class="btn z-depth-5 waves-effect waves-purple right" tooltip-position="bottom" data-tooltip="">
+        <i class="material-icons left">check</i> Save</button>
+    </div>
+    </form>
+</div>
+</div>
+
+{% endblock body %}
